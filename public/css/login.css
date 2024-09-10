@@ -1,0 +1,77 @@
+.Background{
+    background-image: url("../images/Login.jpeg");
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+}
+
+
+.bg-cover-midsection {
+    background-image: url('images/HomePage.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Optional: Keeps the background image fixed during scroll */
+    height: 100vh; /* Adjust height as needed */
+    width: 100%; /* Full width */
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Make sure it appears behind other content */
+}
+
+/* Media Section Styles */
+section.bg-zinc-900 {
+    background: url('images/background-image.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+section.bg-zinc-900 .relative {
+    position: relative;
+    overflow: hidden;
+}
+
+section.bg-zinc-900 img {
+    transition: transform 0.3s ease;
+}
+
+section.bg-zinc-900 img:hover {
+    transform: scale(1.05);
+}
+
+section.bg-zinc-900 .absolute {
+    transition: opacity 0.3s ease;
+}
+
+section.bg-zinc-900 .absolute:hover {
+    opacity: 0.8;
+}
+
+/* Box Styling */
+.info-box {
+    background-color: #2d3748; /* Dark background for the box */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.info-box-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #38b2ac; /* Tailwind's teal-400 */
+}
+
+.info-box-text {
+    margin-top: 12px;
+    font-size: 1.125rem;
+    color: #edf2f7; /* Tailwind's gray-100 */
+}
+
+
+
+
+    

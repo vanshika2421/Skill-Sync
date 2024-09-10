@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-200 h-screen flex items-center justify-center">
+    <div class="absolute top-4 left-4">
+        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+            <a href="/home">home</a>
+        </button>
+    </div>
+    <div class="absolute top-5 right-5">
+        <a
+          class="bg-red-500 px-6 py-2 text-sm text-white inline-block rounded-md"
+          href="/"
+          >Logout</a>
+    </div>
+    
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-sm w-full text-center">
+        <div class="flex flex-col items-center">
+            <img src="images/pfp1.jpg" alt="Profile Picture" class="w-36 h-36 rounded-full object-cover mb-4">
+            <h2 class="text-2xl font-bold mb-2 font-mono"><%= result.name %></h2>
+            <p class="text-gray-600 mb-4 font-mono"><%= result.email %></p>
+            <div class="mb-4">
+                <a href="<%= result.github %>" class="text-blue-500 hover:underline flex items-center" target="_blank"><i class="fa-brands fa-github mr-2"></i>GitHub Profile</a>
+            </div>
+            <div class="mb-6">
+                <a href="<%= result.linkedin %>" class="text-blue-500 hover:underline flex items-center" target="_blank"><i class="fa-brands fa-linkedin mr-2"></i>LinkedIn Profile</a>
+            </div>
+        </div>
+        <div class="text-left mb-6">
+            <h3 class="text-xl font-semibold mb-2 text-center font-mono">Skill</h3>
+            <ul class="space-y-2">
+                <li class="bg-gray-100 text-gray-700 font-bold py-2 rounded-md text-center"><%= result.skill %></li>
+            </ul>
+        </div>
+        <div class="">
+            <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+                <a  href="/updateuser">Update Account</a>
+            </button>
+            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+                <a  href="/userdelete">Delete Account</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

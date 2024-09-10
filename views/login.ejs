@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSync System - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../public/css/login.css">
+    <style>
+        /* Custom animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-slideIn {
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="w-full h-screen bg-gradient-to-r from-zinc-900 to-zinc-800 text-white flex items-center justify-center Background">
+        <div class="p-10 w-full max-w-md bg-zinc-800 rounded-lg shadow-lg animate-slideIn">
+            <h1 class="text-4xl my-10 font-semibold text-center">Welcome to SkillSync</h1>
+            <p class="text-center mb-6">Exchange skills, learn, and grow together. Login to explore opportunities!</p>
+            <form action="/login" method="post">
+                
+                <input class="block  mt-3 w-full px-3 py-2 rounded-md bg-transparent border-2 border-zinc-700 outline-none focus:ring-2 focus:ring-blue-500" type="text" placeholder="Username" name="username" required />
+
+                
+                <input class="block  mt-3 w-full px-3 py-2 rounded-md bg-transparent border-2 border-zinc-700 outline-none focus:ring-2 focus:ring-blue-500" type="password" placeholder="Password" name="password" required />
+
+                
+                <input class="block mt-5 px-5 py-3 bg-blue-500 rounded-md hover:bg-blue-600 cursor-pointer transition-all animate-pulse" type="submit" value="Login" />
+            </form>
+            <a class="mt-10 text-blue-500 block text-center hover:underline" href="/Register">New here? Create an account</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSync Platform - Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .messages-container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 60vh;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .message:last-child {
+            border-bottom: none;
+        }
+
+        .username {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .text {
+            color: #333;
+            margin-left: 10px;
+        }
+
+        .message-form {
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .message-form input[type="text"] {
+            width: 75%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .message-form button {
+            width: 20%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .message-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="absolute top-4 left-4">
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            <a href="javascript:history.back()">Back</a>
+        </button>
+    </div>
+
+   
+    <div class="absolute top-4 right-4">
+        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+            <a href="/home">Home</a>
+        </button>
+    </div>
+
+    <% if(usermessage.length>0){%>
+    <div class="messages-container">
+        <% usermessage.forEach(item=>{%>
+        <div class="message">
+            <strong class="username text"><%= item %></strong>
+        </div>
+        <% })%>
+    </div>
+    <% } %>
+   
+
+    
+    <form action="/text/<%= username %>" method="post" class="message-form">
+        <input type="text" placeholder="Type your message here..." name="text" />
+        <button type="submit">Send</button>
+    </form>
+    
+</body>
+</html>

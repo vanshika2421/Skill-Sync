@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSync Platform - Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .message-box {
+            background-color: #2d3748;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .message-box:hover {
+            background-color: #4a5568;
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .message-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .btn-show {
+            background-color: #3182ce;
+        }
+
+        .btn-show:hover {
+            background-color: #2b6cb0;
+        }
+
+        .btn-delete {
+            background-color: #e53e3e;
+        }
+
+        .btn-delete:hover {
+            background-color: #c53030;
+        }
+
+        .username {
+            font-weight: bold;
+            color: #63b3ed;
+        }
+    </style>
+</head>
+
+<body class="bg-zinc-900 text-white p-8">
+
+    <div class="absolute top-4 left-4">
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            <a href="javascript:history.back()">Back</a>
+        </button>
+    </div>
+    
+    <section class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-semibold mb-8 text-center">Your Messages</h2>
+
+        <% if(data.length>0) {%>
+        <% data.forEach(item=>{%>
+        <div class="message-box">
+            <div class="message-header">
+                <h1 class="message-sender text-2xl ">UserID: <%= item.to %></h1>
+            </div>
+            <div class="message-actions">
+                <button class="btn btn-show "><a href="text/<%= item.to %>">Show Conversation</a></button>
+                <button class="btn btn-delete"><a href=" delete/<%= item.to %>">Delete</a></button>
+            </div>
+        </div>
+         <% })%>
+        <% }%>
+    </section>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSync Platform - Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .message-box {
+            background-color: #2d3748;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .message-box:hover {
+            background-color: #4a5568;
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .message-sender {
+            font-weight: bold;
+        }
+
+        .message-content {
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+
+        .message-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .btn-delete {
+            background-color: #e53e3e; /* Red */
+        }
+
+        .btn-delete:hover {
+            background-color: #c53030;
+        }
+
+        .btn-reply {
+            background-color: #3182ce; /* Blue */
+        }
+
+        .btn-reply:hover {
+            background-color: #2b6cb0;
+        }
+    </style>
+</head>
+
+<body class="bg-zinc-900 text-white p-8">
+
+    <!-- Messages Section -->
+    <section class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-semibold mb-8 text-center">Your Messages</h2>
+
+        <!-- Message 1 -->
+        <div class="message-box">
+            <div class="message-header">
+                <span class="message-sender">Alice Johnson</span>
+                <span class="text-gray-400 text-sm">2 hours ago</span>
+            </div>
+            <div class="message-content">
+                Hi there! I saw your post about learning Python. I'm currently working on a Python project and would love to exchange some insights with you.
+            </div>
+            <div class="message-actions">
+                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-reply">Reply</button>
+            </div>
+        </div>
+
+        <!-- Message 2 -->
+        <div class="message-box">
+            <div class="message-header">
+                <span class="message-sender">Bob Smith</span>
+                <span class="text-gray-400 text-sm">1 day ago</span>
+            </div>
+            <div class="message-content">
+                Hey! I noticed your interest in graphic design. I have a few questions about your workflow and would appreciate some advice.
+            </div>
+            <div class="message-actions">
+                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-reply">Reply</button>
+            </div>
+        </div>
+
+        <!-- Message 3 -->
+        <div class="message-box">
+            <div class="message-header">
+                <span class="message-sender">Charlie Davis</span>
+                <span class="text-gray-400 text-sm">3 days ago</span>
+            </div>
+            <div class="message-content">
+                Hello! I'm interested in your expertise with machine learning. Could we set up a time to discuss some of my project challenges?
+            </div>
+            <div class="message-actions">
+                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-reply">Reply</button>
+            </div>
+        </div>
+
+        <!-- Message 4 -->
+        <div class="message-box">
+            <div class="message-header">
+                <span class="message-sender">Dana Lee</span>
+                <span class="text-gray-400 text-sm">5 days ago</span>
+            </div>
+            <div class="message-content">
+                Hi! I saw your recent work on React. I'm struggling with a few concepts and would appreciate any guidance you can offer.
+            </div>
+            <div class="message-actions">
+                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-reply">Reply</button>
+            </div>
+        </div>
+
+        <!-- Message 5 -->
+        <div class="message-box">
+            <div class="message-header">
+                <span class="message-sender">Eve Williams</span>
+                <span class="text-gray-400 text-sm">1 week ago</span>
+            </div>
+            <div class="message-content">
+                Greetings! I noticed your recent post about cybersecurity. I’m currently learning about it and would love to connect and discuss some topics.
+            </div>
+            <div class="message-actions">
+                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-reply">Reply</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+
+</body>
+</html>

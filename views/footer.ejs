@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSync Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles */
+        .search-result {
+            background-color: rgba(255, 255, 255, 0.1); /* Faded color */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow */
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            transition: opacity 0.3s ease;
+        }
+
+        .hidden-elements {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-zinc-900 to-zinc-800 text-white p-8">
+    <h2 class="text-3xl font-semibold text-center mb-8 animate-slideInDown">Connect with Others</h2>
+    
+    <div class="absolute top-4 left-4">
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            <a href="javascript:history.back()">Back</a>
+        </button>
+    </div>
+        <!-- Search Bar -->
+        <div class="flex flex-col items-center">
+            <form action="/footer" method="post" class="flex flex-col items-center">
+            <input 
+                id="search-input" 
+                class="w-full max-w-lg px-4 py-2 bg-zinc-700 text-white rounded-lg outline-none focus:ring-2 focus:ring-blue-500 animate-fadeIn" 
+                type="text" 
+                placeholder="Search for skills..."
+                name="search">
+            
+            <button 
+                id="search-button" 
+                type="submit"
+                class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 animate-fadeIn">
+                Search
+            </button>
+           </form>
+        </div>
+   <% if(result.length>0) { %>
+    <main class="flex flex-col items-center justify-center mt-5 text-center">
+        
+        <section id="search-section" class="w-full max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold mb-4">Search Results</h2>
+            <% result.forEach(ele=>{%>
+            <div class="search-result">
+                <h3 class="text-xl font-semibold"><%= ele.name %></h3>
+                <p class="mt-2">Skill: <%= ele.skill %></p>
+                <p class="mt-2">Username: <%= ele.username %></p>
+                <p class="mt-2"><i class="fa-brands fa-github"></i> <a href="<%= ele.github %>" target="_blank" class="text-blue-500">Github</a></p>
+                <p class="mt-2"><i class="fa-brands fa-linkedin"></i> <a href="<%= ele.linkedin %>" target="_blank" class="text-blue-500">Linkedin</a></p>
+                <button  class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg"><a href="/text/<%= ele.username %>">Message</a></button>
+                
+            </div>
+            <% }) %>
+
+        </section>
+       
+    </main>
+    <% } %>
+</body>
+
+</html>

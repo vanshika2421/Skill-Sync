@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSync Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+
+   
+
+    <style>
+        /* Custom animations */
+ 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .animate-slideInDown {
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .animate-bounceIn {
+            animation: bounceIn 1s infinite;
+        }
+
+        /* Box Styling */
+        .info-box {
+            background-color: #2d3748; /* Dark background for the box */
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-box-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #38b2ac; /* Tailwind's teal-400 */
+        }
+
+        .info-box-text {
+            margin-top: 12px;
+            font-size: 1.125rem;
+            color: #edf2f7; /* Tailwind's gray-100 */
+        }
+
+        /* Hamburger Menu Styles */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .search-icon {
+            cursor: pointer;
+            color: #edf2f7;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2d3748; /* Tailwind's bg-zinc-800 */
+                position: absolute;
+                top: 64px; /* Height of navbar */
+                left: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-zinc-900 to-zinc-800 text-white">
+
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between p-6 bg-zinc-800 shadow-md relative">
+        <div class="flex items-center justify-center space-x-4">
+            <!-- Logo -->
+            <img src="images/logo3.png" alt="Skill Barter Logo" class="h-10 animate-fadeIn rounded-xl">
+            <h4 class="text-3xl font-bold font-mono animate-slideInDown">SkillSync</h4>
+        </div>
+
+        <!-- Search Icon -->
+        
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex space-x-6 nav-links flex items-center">
+            <div class="flex items-center space-x-4">
+                <div class="search-icon animate-fadeIn" id="search-icon">
+                    <a href="/footer"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+            <a href="/aboutus" class=" text-xl hover:text-blue-500 hover-bounce font-mono">About Us</a>
+            <a href="/dashboard" class=" text-xl hover:text-blue-500 hover-bounce font-mono">Profile</a>
+            <a href="/PersonalMessages"><i class="fa-solid fa-message cursor-pointer"></i></a>
+            <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded shadow-lg transition duration-300">
+                <a href="/logout">Logout</a>
+            </button>
+        </div>
+
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-icon md:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <main class="flex flex-col items-center justify-center min-h-screen text-center p-8 bg-cover-midsection">
+        <div>
+            <span class="text-4xl font-bold animate-slideInDown mb-6 font-sans ">WELCOME ,  </span>  
+            <span class="text-6xl text-blue-500 font-bold font-mono"> <%=name %> </span>
+        </div><br>
+        <h1 class="text-4xl font-bold animate-slideInDown mb-6 font-sans ">  TO SkillSync </h1>
+        <p class="text-xl mb-8 font-mono">Connect, Exchange Knowledge, and Grow Together</p>
+
+        <!-- Flowchart Section -->
+        <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
+            <!-- Step 1 -->
+            <div class="info-box animate-fadeIn">
+                <div class="info-box-number">1</div>
+                <div class="info-box-text font-mono">Search for Skills or Users</div>
+            </div>
+            <!-- Arrow -->
+            <div class="hidden md:block">
+                <svg class="w-8 h-8 animate-bounceIn" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+            <!-- Step 2 -->
+            <div class="info-box animate-fadeIn">
+                <div class="info-box-number">2</div>
+                <div class="info-box-text font-mono">Connect with Them</div>
+            </div>
+            <!-- Arrow -->
+            <div class="hidden md:block">
+                <svg class="w-8 h-8 animate-bounceIn" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+            <!-- Step 3 -->
+            <div class="info-box animate-fadeIn">
+                <div class="info-box-number">3</div>
+                <div class="info-box-text font-mono">Exchange Knowledge & Skills</div>
+            </div>
+        </div>
+
+        <!-- Additional Text Section -->
+        <div class="mt-12 max-w-3xl text-left">
+            <h2 class="text-3xl ml-30px font-semibold mb-4 mt-20 animate-fadeIn text-blue-500 font-sans">HOW IT WORKS</h2>
+            <p class="mb-4 animate-fadeIn font-mono">
+                SkillSync is designed to help you connect with like-minded individuals who share your interests
+                and expertise. Whether you're looking to learn a new skill or share your own, our platform facilitates
+                seamless exchanges that foster personal and professional growth.
+            </p>
+            <p class="animate-fadeIn font-mono">
+                Simply search for the skills or users you're interested in, reach out to connect, and start exchanging
+                knowledge. Our intuitive interface and robust features ensure that your experience is smooth and
+                rewarding.
+            </p>
+        </div>
+    </main>
+
+    <!-- Media Section -->
+    <section class="mt-3 p-8 bg-zinc-900 text-white">
+        <h2 class="text-3xl font-semibold text-center mb-8 animate-slideInDown text-blue-500 font-sans">MEDIA GALLERY</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Media Item 1 -->
+            <div class="relative overflow-hidden rounded-lg shadow-md">
+                <img src="images/home1.avif" alt="Media 1" class="w-full h-full object-cover">
+            </div>
+            <!-- Media Item 2 -->
+            <div class="relative overflow-hidden rounded-lg shadow-md">
+                <img src="images/home2.jpg" alt="Media 2" class="w-full h-full object-cover">
+            </div>
+            <!-- Media Item 3 -->
+            <div class="relative overflow-hidden rounded-lg shadow-md">
+                <img src="images/home3.jpg" alt="Media 3" class="w-full h-full object-cover">
+            </div>
+            <!-- Add more media items as needed -->
+        </div>
+    </section>
+
+    <section class="mt-16 p-8 bg-zinc-900 text-white">
+        <h2 class="text-3xl font-semibold text-center mb-8 animate-slideInDown text-blue-500 font-sans  ">USER EXPERIENCE</h2>
+        <div class="flex flex-wrap justify-center space-x-4">
+            <!-- Experience 1 -->
+            <div class="bg-zinc-800 p-6 rounded-lg shadow-md w-full max-w-xs text-center mb-6">
+                <p class="text-lg font-semibold">John Doe</p>
+                <p class="mt-2">"The SkillSync has been a game-changer for me. I've connected with experts in
+                    my field and learned so much. Highly recommended!"</p>
+                <p class="mt-2 text-gray-400">⭐⭐⭐⭐⭐</p>
+            </div>
+            <!-- Experience 2 -->
+            <div class="bg-zinc-800 p-6 rounded-lg shadow-md w-full max-w-xs text-center mb-6">
+                <p class="text-lg font-semibold">Jane Smith</p>
+                <p class="mt-2">"An excellent platform for skill exchange. The process is smooth, and I've met some
+                    incredible people through it."</p>
+                <p class="mt-2 text-gray-400">⭐⭐⭐⭐</p>
+            </div>
+            <!-- Experience 3 -->
+            <div class="bg-zinc-800 p-6 rounded-lg shadow-md w-full max-w-xs text-center mb-6">
+                <p class="text-lg font-semibold">Alex Johnson</p>
+                <p class="mt-2">"I love the user-friendly interface and the diverse skill set available. It's been a
+                    fantastic experience overall."</p>
+                <p class="mt-2 text-gray-400">⭐⭐⭐⭐⭐</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2024 SkillSync. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Navbar for mobile view
+        document.querySelector('.menu-icon').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
